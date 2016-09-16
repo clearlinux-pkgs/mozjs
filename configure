@@ -1,0 +1,5 @@
+--with-x
+--with-system-zlib
+--enable-system-ffi
+--with-system-nspr
+
