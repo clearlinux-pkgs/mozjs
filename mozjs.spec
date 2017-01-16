@@ -4,7 +4,7 @@
 #
 Name     : mozjs
 Version  : 24.2.0
-Release  : 4
+Release  : 5
 URL      : http://ftp.mozilla.org/pub/js/mozjs-24.2.0.tar.bz2
 Source0  : http://ftp.mozilla.org/pub/js/mozjs-24.2.0.tar.bz2
 Summary  : A process and system utilities module for Python
@@ -61,6 +61,8 @@ dev components for the mozjs package.
 
 %build
 export LANG=C
+export SOURCE_DATE_EPOCH=1484361909
+
 pushd js/src
 %configure --disable-static --with-x \
 --with-system-zlib \
@@ -70,6 +72,8 @@ make V=1  %{?_smp_mflags}
 popd
 
 %install
+export SOURCE_DATE_EPOCH=1484361909
+
 rm -rf %{buildroot}
 pushd js/src
 %make_install
