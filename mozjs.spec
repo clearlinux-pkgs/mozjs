@@ -4,7 +4,7 @@
 #
 Name     : mozjs
 Version  : 24.2.0
-Release  : 6
+Release  : 7
 URL      : http://ftp.mozilla.org/pub/js/mozjs-24.2.0.tar.bz2
 Source0  : http://ftp.mozilla.org/pub/js/mozjs-24.2.0.tar.bz2
 Summary  : A process and system utilities module for Python
