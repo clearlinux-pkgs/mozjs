@@ -1,0 +1,43 @@
+Configure miss: ranlib
+Configure miss: ar
+Configure miss: whether the C compiler (gcc -O2 -fPIC -g -feliminate-unused-debug-types  -pipe -Wall -Wp,-D_FORTIFY_SOURCE=2 -fexceptions -fstack-protector --param=ssp-buffer-size=32 -Wformat -Wformat-security -Wl,--copy-dt-needed-entries -Wno-error -Wl,-z -Wl,now -Wl,-z -Wl,relro -Wl,-z,max-page-size=0x1000 -ftree-vectorize -m64 -mtune=skylake -fasynchronous-unwind-tables -fno-omit-frame-pointer -Wp,-D_REENTRANT  ) is a cross-compiler
+Configure miss: whether the C++ compiler (g++ -O2 -fPIC -g -feliminate-unused-debug-types  -pipe -Wall -Wp,-D_FORTIFY_SOURCE=2 -fexceptions -fstack-protector --param=ssp-buffer-size=32 -Wformat -Wformat-security -Wl,--copy-dt-needed-entries -Wno-error -Wl,-z -Wl,now -Wl,-z -Wl,relro -Wl,-z,max-page-size=0x1000 -ftree-vectorize -m64 -mtune=skylake -fasynchronous-unwind-tables -fno-omit-frame-pointer -Wp,-D_REENTRANT  ) is a cross-compiler
+Configure miss: x86_64-clr-linux-gnu-as
+Configure miss: x86_64-clr-linux-gnu-as
+Configure miss: x86_64-clr-linux-gnu-ld
+Configure miss: x86_64-clr-linux-gnu-ld
+Configure miss: x86_64-clr-linux-gnu-strip
+Configure miss: x86_64-clr-linux-gnu-strip
+Configure miss: x86_64-clr-linux-gnu-windres
+Configure miss: x86_64-clr-linux-gnu-windres
+Configure miss: sb-conf
+Configure miss: ve
+Configure miss: tar archiver... checking for gnutar
+Configure miss: gmake
+Configure miss: X
+Configure miss: custom <stdint.h> implementation
+Configure miss: whether the linker supports Identical Code Folding
+Configure miss: whether removing dead symbols breaks debugging
+Configure miss: __stdcall
+Configure miss: machine/endian.h
+Configure miss: sys/isa_defs.h
+Configure miss: uint_t
+Configure miss: uname.__domainname
+Configure miss: gcc c++0x headers bug without rtti
+Configure miss: For gcc visibility bug with class-level attributes (GCC bug 26905)
+Configure miss: For x86_64 gcc visibility bug with builtins (GCC bug 20297)
+Configure miss: gcc PR49911
+Configure miss: gcc pr39608
+Configure miss: llvm pr8927
+Configure miss: opendir in -ldir
+Configure miss: sys/byteorder.h
+Configure miss: compat.h
+Configure miss: gethostbyname_r in -lc_r
+Configure miss: pthread_create in -lpthreads
+Configure miss: _getc_nolock
+Configure miss: rint
+Configure miss: whether va_lists can be copied by value
+Configure miss: whether C++ requires implementation of unused virtual methods
+Configure miss: trouble comparing to zero near std::operator!=()
+Configure miss: correct overload resolution with const and templates
+Configure miss: what kind of ordering can be done with the linker

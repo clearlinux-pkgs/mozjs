@@ -4,38 +4,30 @@
 #
 Name     : mozjs
 Version  : 24.2.0
-Release  : 8
+Release  : 9
 URL      : http://ftp.mozilla.org/pub/js/mozjs-24.2.0.tar.bz2
 Source0  : http://ftp.mozilla.org/pub/js/mozjs-24.2.0.tar.bz2
 Summary  : A process and system utilities module for Python
 Group    : Development/Tools
-License  : BSD-2-Clause BSD-3-Clause BSD-3-Clause-Clear GPL-2.0 ICU LGPL-2.0 LGPL-2.1 MIT MPL-2.0-no-copyleft-exception
+License  : BSD-2-Clause BSD-3-Clause BSD-3-Clause-Clear ICU LGPL-2.0 LGPL-2.1 MIT MPL-2.0-no-copyleft-exception
 Requires: mozjs-bin
+Requires: psutil
 BuildRequires : nspr-dev
 BuildRequires : pbr
 BuildRequires : pip
 BuildRequires : pkgconfig(libffi)
 BuildRequires : pkgconfig(x11)
+BuildRequires : psutil
 BuildRequires : python-dev
 BuildRequires : python3-dev
 BuildRequires : setuptools
+BuildRequires : zlib-dev
 Patch1: mozjs24-perl522.patch
+Patch2: gcc7-compat.patch
 
 %description
-ICU is a set of C and C++ libraries that provides robust and full-featured
-Unicode and locale support. The library provides calendar support, conversions
-for many character sets, language sensitive collation, date
-and time formatting, support for many locales, message catalogs
-and resources, message formatting, normalization, number and currency
-formatting, time zones support, transliteration, word, line and
-sentence breaking, etc.
-
-This package contains the Unicode character database and derived
-properties, along with converters and time zones data.
-
-This package contains the runtime libraries for ICU. It does
-not contain any of the data files needed at runtime and present in the
-`icu' and `icu-locales` packages.
+Quick links
+        ===========
 
 %package bin
 Summary: bin components for the mozjs package.
@@ -58,11 +50,14 @@ dev components for the mozjs package.
 %prep
 %setup -q -n mozjs-24.2.0
 %patch1 -p1
+%patch2 -p1
 
 %build
+export http_proxy=http://127.0.0.1:9/
+export https_proxy=http://127.0.0.1:9/
+export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1484361909
-
+export SOURCE_DATE_EPOCH=1509474332
 pushd js/src
 %configure --disable-static --with-x \
 --with-system-zlib \
@@ -72,8 +67,7 @@ make V=1  %{?_smp_mflags}
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1484361909
-
+export SOURCE_DATE_EPOCH=1509474332
 rm -rf %{buildroot}
 pushd js/src
 %make_install
@@ -162,5 +156,5 @@ popd
 /usr/include/mozjs-24/mozilla/Types.h
 /usr/include/mozjs-24/mozilla/Util.h
 /usr/include/mozjs-24/mozilla/WeakPtr.h
-/usr/lib64/*.so
-/usr/lib64/pkgconfig/*.pc
+/usr/lib64/libmozjs-24.so
+/usr/lib64/pkgconfig/mozjs-24.pc
